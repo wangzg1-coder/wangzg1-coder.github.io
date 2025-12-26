@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>因式分解详解</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+        
+        .method-section {
+            margin-bottom: 45px;
+            padding: 25px;
+            background: #f8f9ff;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+        }
+        
+        h2 {
+            color: #764ba2;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .formula {
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-size: 1.2em;
+            text-align: center;
+            border: 2px dashed #667eea;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .example {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .example-title {
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 12px;
+            font-size: 1.15em;
+        }
+        
+        .step {
+            margin: 12px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .step::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #764ba2;
+            font-weight: bold;
+        }
+        
+        .highlight {
+            background: #ffe5b4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        .tip {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .tip strong {
+            color: #2196f3;
+        }
+        
+        .answer {
+            background: #f0f7f0;
+            border: 2px solid #4caf50;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            font-size: 1.1em;
+            text-align: center;
+        }
+        
+        .answer strong {
+            color: #4caf50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📐 因式分解详解</h1>
+        <p class="subtitle">掌握因式分解的常用方法与技巧</p>
+
+        <div class="method-section">
+            <h2>一、提取公因式法</h2>
+            <p>当多项式的各项都含有<span class="highlight">公共因式</span>时，可以把这个公因式提取出来。</p>
+            <div class="formula">
+                公式：ma + mb + mc = m(a + b + c)
+            </div>
+            
+            <div class="example">
+                <div class="example-title">例题1：分解因式 6x² + 9x</div>
+                <div class="step">观察：两项都含有因数3和x</div>
+                <div class="step">提取公因式：3x</div>
+                <div class="step">6x² ÷ 3x = 2x，9x ÷ 3x = 3</div>
+                <div class="answer"><strong>答案：</strong>6x² + 9x = 3x(2x + 3)</div>
+            </div>
+
+            <div class="example">
+                <div class="example-title">例题2：分解因式 -4a³b + 6a²b² - 2ab</div>
+                <div class="step">观察：各项的公因式是 -2ab</div>
+                <div class="step">提取 -2ab 后剩余：2a² - 3ab + 1</div>
+                <div class="answer"><strong>答案：</strong>-4a³b + 6a²b² - 2ab = -2ab(2a² - 3ab + 1)</div>
+            </div>
+
+            <div class="tip">
+                <strong>💡 提示：</strong>提取公因式时，通常把负号也提出来，使括号内的第一项系数为正。
+            </div>
+        </div>
+
+        <div class="method-section">
+            <h2>二、公式法</h2>
+            <p>利用<span class="highlight">乘法公式的逆运算</span>进行因式分解。</p>
+            
+            <h3 style="color: #764ba2; margin: 25px 0 15px 0;">1. 平方差公式</h3>
+            <div class="formula">
+                a² - b² = (a + b)(a - b)
+            </div>
+            
+            <div class="example">
+                <div class="example-title">例题3：分解因式 x² - 25</div>
+                <div class="step">识别：x² - 25 = x² - 5²</div>
+                <div class="step">应用平方差公式：a = x，b = 5</div>
+                <div class="answer"><strong>答案：</strong>x² - 25 = (x + 5)(x - 5)</div>
+            </div>
+
+            <div class="example">
+                <div class="example-title">例题4：分解因式 9a² - 4b²</div>
+                <div class="step">识别：9a² - 4b² = (3a)² - (2b)²</div>
+                <div class="step">应用平方差公式</div>
+                <div class="answer"><strong>答案：</strong>9a² - 4b² = (3a + 2b)(3a - 2b)</div>
+            </div>
+
+            <h3 style="color: #764ba2; margin: 25px 0 15px 0;">2. 完全平方公式</h3>
+            <div class="formula">
+                a² + 2ab + b² = (a + b)²<br>
+                a² - 2ab + b² = (a - b)²
+            </div>
+            
+            <div class="example">
+                <div class="example-title">例题5：分解因式 x² + 6x + 9</div>
+                <div class="step">识别：x² + 6x + 9 = x² + 2×3×x + 3²</div>
+                <div class="step">符合完全平方公式：a = x，b = 3</div>
+                <div class="answer"><strong>答案：</strong>x² + 6x + 9 = (x + 3)²</div>
+            </div>
+
+            <div class="example">
+                <div class="example-title">例题6：分解因式 4x² - 12xy + 9y²</div>
+                <div class="step">识别：(2x)² - 2×(2x)×(3y) + (3y)²</div>
+                <div class="step">符合完全平方公式</div>
+                <div class="answer"><strong>答案：</strong>4x² - 12xy + 9y² = (2x - 3y)²</div>
+            </div>
+        </div>
+
+        <div class="method-section">
+            <h2>三、十字相乘法</h2>
+            <p>对于形如 <span class="highlight">x² + px + q</span> 的二次三项式，若能找到两个数m和n，使得 m + n = p 且 m × n = q，则可分解。</p>
+            <div class="formula">
+                x² + px + q = (x + m)(x + n)
+            </div>
+            
+            <div class="example">
+                <div class="example-title">例题7：分解因式 x² + 5x + 6</div>
+                <div class="step">寻找两个数：m + n = 5，m × n = 6</div>
+                <div class="step">发现：2 + 3 = 5，2 × 3 = 6</div>
+                <div class="step">所以 m = 2，n = 3</div>
+                <div class="answer"><strong>答案：</strong>x² + 5x + 6 = (x + 2)(x + 3)</div>
+            </div>
+
+            <div class="example">
+                <div class="example-title">例题8：分解因式 x² - 7x + 12</div>
+                <div class="step">寻找两个数：m + n = -7，m × n = 12</div>
+                <div class="step">发现：(-3) + (-4) = -7，(-3) × (-4) = 12</div>
+                <div class="answer"><strong>答案：</strong>x² - 7x + 12 = (x - 3)(x - 4)</div>
+            </div>
+
+            <div class="tip">
+                <strong>💡 提示：</strong>当常数项为正时，两个数同号；当常数项为负时，两个数异号。
+            </div>
+        </div>
+
+        <div class="method-section">
+            <h2>四、分组分解法</h2>
+            <p>对于四项或更多项的多项式，可以通过<span class="highlight">适当分组</span>来分解因式。</p>
+            
+            <div class="example">
+                <div class="example-title">例题9：分解因式 ax + ay + bx + by</div>
+                <div class="step">分组：(ax + ay) + (bx + by)</div>
+                <div class="step">提取公因式：a(x + y) + b(x + y)</div>
+                <div class="step">再次提取：(x + y)(a + b)</div>
+                <div class="answer"><strong>答案：</strong>ax + ay + bx + by = (x + y)(a + b)</div>
+            </div>
+
+            <div class="example">
+                <div class="example-title">例题10：分解因式 x² - y² + 2x + 1</div>
+                <div class="step">重新排列：x² + 2x + 1 - y²</div>
+                <div class="step">识别完全平方：(x + 1)² - y²</div>
+                <div class="step">应用平方差公式</div>
+                <div class="answer"><strong>答案：</strong>x² - y² + 2x + 1 = (x + 1 + y)(x + 1 - y)</div>
+            </div>
+        </div>
+
+        <div class="tip" style="background: #fff3e0; border-color: #ff9800;">
+            <strong>🎯 解题步骤总结：</strong><br>
+            1️⃣ 先看有无公因式，有则先提取<br>
+            2️⃣ 再看能否用公式法（平方差、完全平方）<br>
+            3️⃣ 考虑十字相乘法（二次三项式）<br>
+            4️⃣ 尝试分组分解法（多项式）<br>
+            5️⃣ 检查结果是否还能继续分解
+        </div>
+    </div>
+</body>
+</html>
